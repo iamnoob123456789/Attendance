@@ -1,0 +1,104 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar styles */
+.navbar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.navbar button {
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.navbar button:hover {
+    background: #0056b3;
+}
+
+/* Form styles */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 8px;
+}
+
+.form-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background: #218838;
+}
+
+/* List styles */
+.list-container {
+    margin-top: 20px;
+}
+
+.list-container h3 {
+    color: #333;
+}
+
+.list-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list-container li {
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-left: 5px solid #007bff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .form-container {
+        padding: 15px;
+    }
+}
