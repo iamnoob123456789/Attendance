@@ -13,16 +13,23 @@ export default function TeacherLogin() {
     const [error, setError] = useState("");
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent page refresh
-        setError(""); // Clear previous errors
+        e.preventDefault();
+        setError("");
 
         try {
-            const response = await axios.post("http://localhost:5000/teacherlogin", { username, password });
+            const response = await axios.post("http://localhost:5000/teacherlogin", {
+                username,
+                password,
+            });
+
+            console.log("Login Response:", response.data);
 
             if (response.data.success) {
-                console.log("Login successful");
-                localStorage.setItem("token", response.data.token); // Store auth token
-                navigate("/teacherdashboard"); // Redirect after login
+                localStorage.setItem("teacherId", response.data.teacher.teacherid);
+                localStorage.setItem("teacherName", response.data.teacher.name);
+                localStorage.setItem("token", response.data.token);
+
+                navigate("/teacherdashboard");
             } else {
                 setError(response.data.message || "Invalid username or password");
             }
@@ -36,7 +43,7 @@ export default function TeacherLogin() {
         <div className={`container ${darkMode ? "dark" : "light"}`}>
             <div className="theme-toggle">
                 <button onClick={() => setDarkMode(!darkMode)} className="toggle-button">
-                    {darkMode ? <Sun className="icon"/> : <Moon className="icon" />}
+                    {darkMode ? <Sun className="icon" /> : <Moon className="icon" />}
                 </button>
             </div>
 
@@ -56,6 +63,7 @@ export default function TeacherLogin() {
                             className="input-field"
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
+                            required
                         />
                     </div>
 
@@ -67,6 +75,7 @@ export default function TeacherLogin() {
                             className="input-field"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            required
                         />
                     </div>
 

@@ -1,0 +1,68 @@
+.dashboard {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+  max-width: 700px;
+  margin: auto;
+  background-color: #f9f9f9;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dashboard.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controls {
+  margin: 1rem 0;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.controls select,
+.controls input[type="file"] {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.students {
+  margin-top: 1rem;
+}
+
+.student {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+
+.student button {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.student button.active,
+.student button:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.student button:last-child.active {
+  background-color: #e53935;
+}

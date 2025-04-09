@@ -1,0 +1,100 @@
+/* Define global variables for reusability */
+:root {
+    --primary-color: #1976d2; /* Button background */
+    --primary-hover: #145ea8; /* Button hover */
+    --text-color: #222; /* Default text */
+    --bg-color: #fff; /* Default background */
+    --border-color: #ccc; /* Input borders */
+    --select-bg: #f9f9f9; /* Select background */
+    --spacing-sm: 0.6rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 6px;
+    --max-width: 600px;
+  }
+  
+  .export-container {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    max-width: var(--max-width);
+    margin: 0 auto; /* Simplified from 'auto' */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md); /* Modern spacing between children */
+  }
+  
+  .export-container h2 {
+    margin: 0 0 var(--spacing-md);
+    font-size: clamp(1.5rem, 4vw, 2rem); /* Responsive font size */
+    font-weight: 600;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem; /* Space between label text and select */
+    font-size: 1rem;
+    color: var(--text-color);
+  }
+  
+  .select {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: var(--select-bg);
+    font-size: 1rem;
+    font-family: inherit; /* Matches container font */
+    cursor: pointer;
+    transition: border-color 0.2s ease; /* Smooth interaction */
+  }
+  
+  .select:focus {
+    outline: none;
+    border-color: var(--primary-color); /* Highlight on focus */
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.3); /* Focus ring */
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Smooth transitions */
+  }
+  
+  button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px); /* Subtle lift effect */
+  }
+  
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-hover); /* Focus ring */
+  }
+  
+  button:disabled {
+    background-color: #b0bec5; /* Grayed out when disabled */
+    cursor: not-allowed;
+    transform: none; /* Reset hover effect */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .export-container {
+      padding: var(--spacing-md);
+      max-width: 100%; /* Full width on small screens */
+    }
+  
+    button {
+      width: 100%; /* Full-width button on small screens */
+    }
+  }

@@ -5,10 +5,13 @@ import {
   Home,
   Settings,
 } from "lucide-react";
+import { AiFillFileExcel } from "react-icons/ai";
 import "./TeacherDashboard.css";
 import TeacherHome from "./TeacherHome";
 import TeacherSettings from "./TeacherSettings";
-import Classes from "./Classes";
+import AttendanceAnalyser from "./AttendanceAnalyser";
+import Report from "./Reports";
+import ExportAttendanceReport from "./ExportAttendance";
 const TeacherDashboard = () => {
   const [activePage, setActivePage] = useState('home');
 
@@ -16,16 +19,17 @@ const TeacherDashboard = () => {
   const handleClasses = () => setActivePage('classes');
   const handleReports = () => setActivePage('reports');
   const handleSettings = () => setActivePage('settings');
-
+  const handleExcelReports=()=>setActivePage('excelreports');
   const renderContent = () => {
     switch (activePage) {
       case 'home':
         return <TeacherHome/>;
       case 'classes':
-        return <Classes/>
-      
+        return <AttendanceAnalyser/>;
       case 'reports':
-        return <div>Reports Page</div>;
+        return <Report/>;
+      case 'excelreports':
+         return <ExportAttendanceReport/>;
       case 'settings':
         return <TeacherSettings/>;
       default:
@@ -50,6 +54,11 @@ const TeacherDashboard = () => {
           </li>
           <li className={`nav-item ${activePage === 'reports' ? 'active' : ''}`} onClick={handleReports}>
             <FileText size={20} />
+            <span>Reports</span>
+          </li>
+          <li className={`nav-item ${activePage === 'excelreports' ? 'active' : ''}`} onClick={handleExcelReports}>
+
+            <AiFillFileExcel  size={20}/>
             <span>Reports</span>
           </li>
           <li className={`nav-item ${activePage === 'settings' ? 'active' : ''}`} onClick={handleSettings}>

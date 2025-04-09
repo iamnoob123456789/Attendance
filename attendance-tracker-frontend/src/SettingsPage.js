@@ -4,22 +4,23 @@ import "./Settings.css";
 
 const SettingsPage = () => {
   const [student, setStudent] = useState(null);
+  const userId = localStorage.getItem("userId");
 
   useEffect(() => {
-    // You can replace this ID with dynamic logic later (e.g. from login)
-    const studentId = 1; // Change to real ID you want to fetch
-
-    axios.get(`http://localhost:5000/students/${studentId}`)
-      .then(response => {
-        setStudent(response.data);
-      })
-      .catch(error => {
-        console.error("Error fetching student data:", error);
-      });
-  }, []);
+    if (userId) {
+      axios.get(`http://localhost:5000/students/${userId}`)
+        .then(response => {
+          setStudent(response.data);
+          console.log(userId);
+        })
+        .catch(error => {
+          console.error("Failed to fetch student:", error);
+        });
+    }
+  }, [userId]);
 
   if (!student) {
-    return <p>Loading...</p>;
+    return <p>Loading student data...</p>;
   }
 
   return (
@@ -27,11 +28,11 @@ const SettingsPage = () => {
       <div className="profile-image"></div>
       <div className="profile-details">
         <h2>{student.name}</h2>
-        <p><strong>ID:</strong> {student.id}</p>
+        <p><strong>ID:</strong> {student.userid}</p>
         <p><strong>Year:</strong> {student.year}</p>
         <p><strong>Branch:</strong> {student.branch}</p>
         <p><strong>Section:</strong> {student.section}</p>
-        <p><strong>Sanjaya ID:</strong> {student.sanjaya_id}</p>
+        <p><strong>Sanjaya ID:</strong> {student.sanajayaid}</p>
       </div>
     </div>
   );

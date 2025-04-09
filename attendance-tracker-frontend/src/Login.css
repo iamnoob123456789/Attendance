@@ -1,140 +1,64 @@
-/* General container styles */
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    transition: all 0.5s ease-in-out;
-}
-
-/* Light and Dark Mode Backgrounds */
-.dark {
-    background: linear-gradient(to right, #1a1a2e, #3a0ca3, #000000);
-    color: white;
-}
-
-.light {
-    background: linear-gradient(to right, #add8e6, #dda0dd, #ffb6c1);
-    color: black;
-}
-
-/* Theme Toggle Button */
-.theme-toggle {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-}
-
-.toggle-button {
-    padding: 10px;
-    border: none;
-    border-radius: 50%;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.toggle-button:hover {
-    background-color: #555;
-}
-
-.icon {
-    width: 20px;
-    height: 20px;
-}
-
-/* Login Box */
-.login-box {
-    width: 350px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    background-color: #222;
-    text-align: center;
-}
-
-.light .login-box {
-    background-color: white;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Input Fields */
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.input-field {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #555;
-    outline: none;
-    transition: border 0.3s;
-    background-color: #444;
-}
-
-.light .input-field {
-    background-color: #f0f0f0;
-    color: black;
-    border: 1px solid #ccc;
-}
-
-.input-field:focus {
-    border-color: #007bff;
-}
-
-/* Login Button */
-.login-button {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.login-button:hover {
-    background-color: #0056b3;
-}
-.main {
+.role-page {
+    background: linear-gradient(to right, #3f87a6, #00d2ff);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of the viewport */
+    justify-content: center;
     text-align: center;
-}
-
-.flex-container {
+    padding: 2rem;
+  }
+  
+  .role-title {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+  
+  .role-cards {
     display: flex;
-    gap: 20px; /* Space between login options */
-    margin-top: 20px;
-}
-
-.flex-container div {
-    padding: 10px 20px;
-    border: 2px solid #333;
-    border-radius: 10px;
-    background-color: #f4f4f4;
-    transition: 0.3s;
-}
-
-.flex-container div:hover {
-    background-color: #ddd;
-}
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .role-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    width: 200px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .role-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .role-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .role-button {
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: white;
+  }
+  
+  .role-button.teacher {
+    background-color: #1976d2;
+  }
+  
+  .role-button.student {
+    background-color: #4caf50;
+    display: inline-block;
+  }
+  
+  
+  

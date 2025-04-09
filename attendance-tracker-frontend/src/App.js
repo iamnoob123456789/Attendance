@@ -10,7 +10,6 @@ import StudentDashboard from "./StudentDashboard";
 import NoticeBoard from './NoticeBoard';
 import SettingsPage from './SettingsPage';
 import StudentAttendance from "./StudentAttendance";
-import Prashnamach from "./Prashnamanch";
 import TimeTable from "./TimeTable";
 import AchievementsPage from "./AchievementsPage";
 import AdminLogin from './AdminLogin';
@@ -31,7 +30,6 @@ const App = () => {
                 <Route path="/noticeboard" element={<NoticeBoard/>} />
                 <Route path="/settings" element={<SettingsPage/>} />
                 <Route path="/attendance" element={<StudentAttendance/>} />
-                <Route path="/prashnamach" element={<Prashnamach/>} />
                 <Route path="/timetable" element={<TimeTable/>} />
                 <Route path="/achievements" element={<AchievementsPage/>} />
                 <Route path="/adminlogin" element={<AdminLogin/>} />

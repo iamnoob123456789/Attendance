@@ -23,6 +23,7 @@ app.use(teacherRoutes);
 app.use(adminRoutes);
 app.use(adminOperations);
 app.use(fetchStudent);
+
 // Start Server
 app.listen(port, () => {
     console.log(`Server running on http://localhost:${port}`);
